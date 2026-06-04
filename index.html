@@ -1,1 +1,565 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Педагогика КТ тест</title>
 
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:linear-gradient(135deg,#e8f5e9,#f1f8e9);
+      color:#1b1b1b;
+    }
+
+    .wrapper{
+      max-width:900px;
+      margin:auto;
+      padding:18px;
+    }
+
+    .hero{
+      background:linear-gradient(135deg,#2e7d32,#66bb6a);
+      color:white;
+      padding:28px 20px;
+      border-radius:22px;
+      text-align:center;
+      margin-bottom:18px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .hero h1{
+      margin:0 0 12px;
+      font-size:30px;
+      line-height:1.2;
+    }
+
+    .hero p{
+      margin:8px 0;
+      font-size:17px;
+      line-height:1.5;
+    }
+
+    .badge{
+      display:inline-block;
+      background:white;
+      color:#2e7d32;
+      padding:8px 14px;
+      border-radius:999px;
+      font-weight:bold;
+      margin-top:12px;
+      font-size:14px;
+    }
+
+    .card{
+      background:white;
+      padding:22px;
+      border-radius:20px;
+      margin-bottom:18px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .card h2{
+      margin-top:0;
+      color:#2e7d32;
+      font-size:22px;
+    }
+
+    .info-list{
+      padding-left:20px;
+      line-height:1.7;
+    }
+
+    .question{
+      background:#f7f7f7;
+      padding:18px;
+      border-radius:16px;
+      margin-bottom:16px;
+      border-left:5px solid #2e7d32;
+    }
+
+    .question b{
+      display:block;
+      margin-bottom:12px;
+      font-size:16px;
+      line-height:1.5;
+    }
+
+    label{
+      display:block;
+      background:white;
+      padding:12px;
+      border-radius:12px;
+      margin:8px 0;
+      border:1px solid #ddd;
+      cursor:pointer;
+      line-height:1.4;
+    }
+
+    label:hover{
+      background:#eaf7ea;
+    }
+
+    input[type="radio"]{
+      margin-right:8px;
+      transform:scale(1.1);
+    }
+
+    button{
+      width:100%;
+      background:#2e7d32;
+      color:white;
+      border:none;
+      padding:16px;
+      border-radius:14px;
+      cursor:pointer;
+      font-size:18px;
+      font-weight:bold;
+      margin-top:10px;
+    }
+
+    button:hover{
+      background:#1b5e20;
+    }
+
+    .result-box{
+      background:#eaf7ea;
+      border:2px solid #2e7d32;
+      padding:22px;
+      border-radius:20px;
+      text-align:center;
+      margin-bottom:18px;
+    }
+
+    .result-box h2{
+      margin-top:0;
+      color:#2e7d32;
+    }
+
+    .correct{
+      color:green;
+      font-weight:bold;
+    }
+
+    .wrong{
+      color:red;
+      font-weight:bold;
+    }
+
+    .explanation{
+      background:#f1f8e9;
+      padding:12px;
+      margin:10px 0 18px;
+      border-radius:12px;
+      line-height:1.5;
+    }
+
+    .contact-box{
+      background:#ffffff;
+      border:2px solid #2e7d32;
+      padding:22px;
+      border-radius:20px;
+      text-align:center;
+      margin-bottom:18px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .contact-box h2{
+      color:#2e7d32;
+      margin-top:0;
+    }
+
+    .contact-box p{
+      line-height:1.5;
+      font-size:16px;
+    }
+
+    .contact-btn{
+      display:block;
+      text-decoration:none;
+      color:white;
+      padding:14px;
+      border-radius:14px;
+      margin:10px 0;
+      font-weight:bold;
+      font-size:17px;
+    }
+
+    .whatsapp{
+      background:#25D366;
+    }
+
+    .telegram{
+      background:#229ED9;
+    }
+
+    .footer{
+      text-align:center;
+      color:#555;
+      font-size:14px;
+      padding:20px 0;
+    }
+
+    @media(max-width:600px){
+      .wrapper{
+        padding:12px;
+      }
+
+      .hero{
+        padding:24px 16px;
+        border-radius:18px;
+      }
+
+      .hero h1{
+        font-size:25px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .card{
+        padding:17px;
+        border-radius:17px;
+      }
+
+      .question{
+        padding:15px;
+      }
+
+      .question b{
+        font-size:15px;
+      }
+
+      label{
+        font-size:15px;
+        padding:11px;
+      }
+
+      button{
+        font-size:16px;
+        padding:15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <div class="hero">
+    <h1>Педагогика бойынша КТ тест</h1>
+    <p>Магистратураға дайындалып жүрсіз бе?</p>
+    <p>Өз деңгейіңізді тегін тексеріп көріңіз.</p>
+    <span class="badge">30 сұрақ • Нәтиже бірден шығады</span>
+  </div>
+
+  <div class="card">
+    <h2>Сайтта не бар?</h2>
+    <ul class="info-list">
+      <li>Педагогика бойынша тест сұрақтары</li>
+      <li>Әр сұраққа 4 жауап нұсқасы</li>
+      <li>Нәтиже автоматты түрде шығады</li>
+      <li>Дұрыс жауап пен қысқаша түсіндірме беріледі</li>
+      <li>Соңында дайындық деңгейіңіз көрсетіледі</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Тест сұрақтары</h2>
+    <div id="quiz"></div>
+    <button onclick="checkAnswers()">Нәтижені көру / Показать результат</button>
+  </div>
+
+  <div id="results"></div>
+
+  <div class="footer">
+    © Педагогика КТ дайындық тесті
+  </div>
+
+</div>
+
+<script>
+const questions = [
+  {
+    q: "1. Стронгтың айтуынша: «Мектеп жұмысы мен оқушы жетістіктерін өрістетудегі негізгі тұлға — ..............»",
+    options: ["A) директор", "B) ата-ана", "C) мұғалім", "D) оқушы"],
+    answer: 2,
+    explanation: "Стронг бойынша оқушы жетістігіне әсер ететін негізгі тұлға — мұғалім."
+  },
+  {
+    q: "2. Мұғалімнің сенімі оның .............., шешім қабылдауын және іс-әрекетін нығайтады.",
+    options: ["A) көзқарасын", "B) мінезін", "C) қабілетін", "D) білімін"],
+    answer: 0,
+    explanation: "Мұғалімнің сенімі оның көзқарасына, шешіміне және әрекетіне әсер етеді."
+  },
+  {
+    q: "3. «Үштік модель» зияткерлік теориясының авторы кім?",
+    options: ["A) Жан Пиаже", "B) Роберт Стернберг", "C) Лев Выготский", "D) Абрахам Маслоу"],
+    answer: 1,
+    explanation: "Роберт Стернберг зияткерліктің үштік теориясын ұсынған."
+  },
+  {
+    q: "4. Бақылау, тәжірибе, ойлау мен талқылау нәтижесінде алынған ақпаратты бағалауға, талдауға және синтездеуге бағытталған пәндік шешім қалай аталады?",
+    options: ["A) механикалық есте сақтау", "B) формативтік бағалау", "C) сыни тұрғыдан бағалау", "D) жиынтық бағалау"],
+    answer: 2,
+    explanation: "Сыни тұрғыдан бағалау ақпаратты талдау, бағалау және қорытынды жасауға бағытталады."
+  },
+  {
+    q: "5. Александр зерттеген диалог үлгілерінің ішіндегі артығын анықтаңыз.",
+    options: ["A) механикалық есте сақтау", "B) декламация", "C) нұсқаулық", "D) бағалау"],
+    answer: 3,
+    explanation: "Бағалау Александр диалог үлгілеріне жатпайды."
+  },
+  {
+    q: "6. Білім беру сөйлесу, талдау және дәлелдеу барысында жүзеге асатынын көрсеткен ғалым кім?",
+    options: ["A) Барнс", "B) Мерсер", "C) Александер", "D) Шон"],
+    answer: 0,
+    explanation: "Барнс білім беру сөйлесу, талдау және дәлелдеу арқылы жүзеге асатынын көрсеткен."
+  },
+  {
+    q: "7. Джон Дьюи мен Дональд Шонның жұмыстарынан шыққан ұғым қандай?",
+    options: ["A) сыни ойлау", "B) рефлективтік практик", "C) метатану", "D) гуманистік тәсіл"],
+    answer: 1,
+    explanation: "Рефлективтік практик ұғымы Дьюи мен Шон еңбектерімен байланысты."
+  },
+  {
+    q: "8. Үнемі қайталап отыру арқылы фактілерді, ойларды және іс-әрекеттерді жаттау диалогтің қай үлгісіне жатады?",
+    options: ["A) зерттеушілік әңгіме", "B) кумулятивтік әңгіме", "C) механикалық есте сақтау", "D) пікірталастық әңгіме"],
+    answer: 2,
+    explanation: "Механикалық есте сақтау қайталау арқылы жаттауға негізделеді."
+  },
+  {
+    q: "9. Оқыту нәтижелерін жүйелі түрде жиынтықтауға бағытталған қызмет қандай терминмен белгіленеді?",
+    options: ["A) оқыту", "B) бағалау", "C) бақылау", "D) жоспарлау"],
+    answer: 1,
+    explanation: "Бағалау оқыту нәтижесін анықтау және шешім қабылдау үшін қолданылады."
+  },
+  {
+    q: "10. Маслоу мен Роджерс оқытудағы қандай тәсілдің негізін қалаушылар?",
+    options: ["A) бихевиористік", "B) когнитивтік", "C) гуманистік", "D) әлеуметтік"],
+    answer: 2,
+    explanation: "Маслоу мен Роджерс гуманистік тәсілдің өкілдері."
+  },
+  {
+    q: "11. Ішкі когнитивтік құрылымдағы өзгерістерді зерттеген зерттеуші кім?",
+    options: ["A) Джин Пиагет", "B) Выготский", "C) Маслоу", "D) Брунер"],
+    answer: 0,
+    explanation: "Джин Пиагет баланың когнитивтік дамуын зерттеген."
+  },
+  {
+    q: "12. Кохлберг өнегелі даму теориясында неше кезеңді бөліп көрсетті?",
+    options: ["A) 2", "B) 3", "C) 5", "D) 7"],
+    answer: 1,
+    explanation: "Берілген база бойынша дұрыс жауап — 3."
+  },
+  {
+    q: "13. Латын тілінен аударғанда «жақын отыру» деген мағынаны білдіретін термин қандай?",
+    options: ["A) рефлексия", "B) бақылау", "C) бағалау", "D) оқыту"],
+    answer: 2,
+    explanation: "Assessment термині «жақын отыру» мағынасымен байланысты."
+  },
+  {
+    q: "14. Аткинсон мен Шифрин қысқа мерзімді есте сақтау адамның жадында негізгі орын алатынын қай жылы анықтады?",
+    options: ["A) 1956 жыл", "B) 1960 жыл", "C) 1968 жыл", "D) 1971 жыл"],
+    answer: 2,
+    explanation: "Аткинсон мен Шифриннің есте сақтау моделі 1968 жылмен байланысты."
+  },
+  {
+    q: "15. 1-сынып оқушылары шамамен қанша сөз пайдаланады?",
+    options: ["A) 2000 сөз", "B) 4000 сөз", "C) 6000 сөз", "D) 10000 сөз"],
+    answer: 2,
+    explanation: "Берілген база бойынша 1-сынып оқушылары шамамен 6000 сөз пайдаланады."
+  },
+  {
+    q: "16. Шулманның «көмекшілері» қандай?",
+    options: ["A) бас", "B) қол", "C) жүрек", "D) көз"],
+    answer: 1,
+    explanation: "Берілген база бойынша дұрыс жауап — қол."
+  },
+  {
+    q: "17. «Мен» тұжырымдамасындағы бір үйлесімдік қандай?",
+    options: ["A) әлеуметтік", "B) пәндік", "C) теориялық", "D) биологиялық"],
+    answer: 0,
+    explanation: "«Мен» тұжырымдамасында әлеуметтік үйлесімдік қарастырылады."
+  },
+  {
+    q: "18. 1-апта күніндегі Дипактың қасиеті қандай?",
+    options: ["A) қабілеті", "B) ұстанымы", "C) білімі", "D) тәжірибесі"],
+    answer: 1,
+    explanation: "Берілген база бойынша Дипактың қасиеті — ұстанымы."
+  },
+  {
+    q: "19. ЖАДА кімнің зерттеуі?",
+    options: ["A) Пиаже", "B) Маслоу", "C) Выготский", "D) Роджерс"],
+    answer: 2,
+    explanation: "ЖАДА — жақын арадағы даму аймағы, Выготский зерттеуімен байланысты."
+  },
+  {
+    q: "20. Мұғалім үшін маңыздысы не?",
+    options: ["A) тек сабақ түсіндіру", "B) зерттеу жүргізсе", "C) тек бағалау", "D) тек бақылау"],
+    answer: 1,
+    explanation: "Мұғалім үшін өз тәжірибесін зерттеу маңызды."
+  },
+  {
+    q: "21. Когнитивті даму дегеніміз не?",
+    options: ["A) баланың дене дамуы", "B) баланың оқу және проблеманы шешу қабілеті", "C) баланың әлеуметтік қарым-қатынасы", "D) баланың тәртіп ережесі"],
+    answer: 1,
+    explanation: "Когнитивті даму оқу, ойлау және проблеманы шешу қабілетімен байланысты."
+  },
+  {
+    q: "22. Гуманистік тәсілдің негізін қалаушылар кімдер?",
+    options: ["A) Пиаже мен Выготский", "B) Маслоу мен Роджерс", "C) Аткинсон мен Шифрин", "D) Дьюи мен Шон"],
+    answer: 1,
+    explanation: "Маслоу мен Роджерс гуманистік психология өкілдері."
+  },
+  {
+    q: "23. «Бағалау» термині нені білдіреді?",
+    options: ["A) бақылау жасау", "B) жақын отыру", "C) нәтиже шығару", "D) жауап беру"],
+    answer: 1,
+    explanation: "Бағалау терминінің түпкі мағынасы — жақын отыру."
+  },
+  {
+    q: "24. «Ойлауды дамыту» теориясының авторы кім?",
+    options: ["A) Жан Пиаже", "B) Лев Выготский", "C) Джон Дьюи", "D) Роберт Стернберг"],
+    answer: 0,
+    explanation: "Жан Пиаже ойлау мен когнитивті даму теориясымен белгілі."
+  },
+  {
+    q: "25. «Білім алуды үйретудің» қозғаушы күші не болып табылады?",
+    options: ["A) бағалау", "B) метатану", "C) бақылау", "D) есте сақтау"],
+    answer: 1,
+    explanation: "Метатану білім алуды үйретудің негізгі қозғаушы күші болып саналады."
+  },
+  {
+    q: "26. Формативтік және жиынтық бағалау қай жылдан бастап белгіленді?",
+    options: ["A) 1950 жыл", "B) 1960 жыл", "C) 1971 жыл", "D) 1986 жыл"],
+    answer: 1,
+    explanation: "Берілген база бойынша дұрыс жауап — 1960 жыл."
+  },
+  {
+    q: "27. Интерпретацияны кейде басқаша қалай атайды?",
+    options: ["A) механикалық жаттау", "B) логикалық қорытынды", "C) формативтік бағалау", "D) бақылау нәтижесі"],
+    answer: 1,
+    explanation: "Интерпретация ақпаратты түсіндіру және логикалық қорытынды жасаумен байланысты."
+  },
+  {
+    q: "28. Метатану дегеніміз не?",
+    options: ["A) саналы білім алу", "B) автоматты жаттау", "C) топпен жұмыс", "D) мұғалімді тыңдау"],
+    answer: 0,
+    explanation: "Метатану — өз оқуын түсіну және бақылау."
+  },
+  {
+    q: "29. Сыныпта талқылаудағы дәлелдің үш түрін анықтаған кім?",
+    options: ["A) Мерсер", "B) Александр", "C) Барнс", "D) Шулман"],
+    answer: 0,
+    explanation: "Мерсер сыныптағы әңгіме мен дәлел түрлерін зерттеген."
+  },
+  {
+    q: "30. Оқушылардың алған ақпаратты сақтауының 50% қай кезде байқалады?",
+    options: ["A) тыңдауда", "B) оқуда", "C) талқылауда", "D) көшіруде"],
+    answer: 2,
+    explanation: "Ақпаратты талқылау есте сақтауды күшейтеді."
+  }
+];
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((item, index) => {
+  let html = `<div class="question">
+    <b>${item.q}</b>`;
+
+  item.options.forEach((option, optionIndex) => {
+    html += `
+      <label>
+        <input type="radio" name="q${index}" value="${optionIndex}">
+        ${option}
+      </label>
+    `;
+  });
+
+  html += `</div>`;
+  quiz.innerHTML += html;
+});
+
+function checkAnswers(){
+  let score = 0;
+  let resultHTML = "";
+
+  questions.forEach((item, index) => {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const userAnswer = selected ? Number(selected.value) : null;
+
+    if(userAnswer === item.answer){
+      score++;
+      resultHTML += `<p class="correct">✔ ${item.q}</p>`;
+    } else {
+      resultHTML += `<p class="wrong">✘ ${item.q}</p>`;
+    }
+
+    resultHTML += `
+      <div class="explanation">
+        <b>Дұрыс жауап:</b> ${item.options[item.answer]}<br>
+        <b>Сіздің жауабыңыз:</b> ${userAnswer !== null ? item.options[userAnswer] : "Жауап берілмеді"}<br>
+        <b>Түсіндірме:</b> ${item.explanation}
+      </div>
+    `;
+  });
+
+  let level = "";
+  let messageKaz = "";
+  let messageRus = "";
+
+  if(score <= 10){
+    level = "Бастапқы деңгей / Начальный уровень";
+    messageKaz = "Сізге әлі көбірек дайындалу керек.";
+    messageRus = "Вам нужно ещё больше подготовиться.";
+  } else if(score <= 22){
+    level = "Орташа деңгей / Средний уровень";
+    messageKaz = "Негізгі түсінік бар, бірақ қосымша практика қажет.";
+    messageRus = "Базовое понимание есть, но нужна дополнительная практика.";
+  } else {
+    level = "Жақсы дайындық / Хорошая готовность";
+    messageKaz = "Нәтижеңіз жақсы. Енді тұрақты қайталау маңызды.";
+    messageRus = "Результат хороший. Теперь важно регулярно повторять.";
+  }
+
+  const finalBlock = `
+    <div class="result-box">
+      <h2>Нәтижеңіз: ${score}/${questions.length}</h2>
+      <h2>${level}</h2>
+      <p>${messageKaz}</p>
+      <p>${messageRus}</p>
+    </div>
+
+    <div class="contact-box">
+      <h2>Толық дайындық керек пе?</h2>
+      <p>800 сұрақтан тұратын толық онлайн-тест туралы білу үшін WhatsApp немесе Telegram-ға жазыңыз.</p>
+      <p>Для полного доступа к 800 вопросам напишите в WhatsApp или Telegram.</p>
+
+      <a class="contact-btn whatsapp" href="https://wa.me/77007976745?text=Сәлеметсіз%20бе!%20Педагогика%20КТ%20бойынша%20800%20сұрақтық%20тест%20туралы%20білгім%20келеді.%0AЗдравствуйте!%20Хочу%20узнать%20про%20тест%20из%20800%20вопросов%20по%20педагогике." target="_blank">
+        WhatsApp-қа жазу
+      </a>
+
+      <a class="contact-btn telegram" href="https://t.me/elnazm_ln" target="_blank">
+        Telegram-ға жазу
+      </a>
+    </div>
+  `;
+
+  document.getElementById("results").innerHTML = finalBlock + resultHTML;
+
+  document.getElementById("results").scrollIntoView({
+    behavior:"smooth"
+  });
+}
+</script>
+
+</body>
+</html>
